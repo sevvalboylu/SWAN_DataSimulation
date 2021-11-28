@@ -3,11 +3,13 @@
 import math
 import sys
 from dataclasses import dataclass
+
 @dataclass
 class Flow:
     name: str
     type: str
     demand: float
+
 
 # Beginning - initializations
 temp = Flow('Fa', 'interactive', 15)
@@ -17,11 +19,10 @@ flows = [temp, temp1, temp2]  # should be a number or maybe list of flows?
 numflows = len(flows)
 priorities = {'interactive', 'elastic', 'background'}
 MAX_INT = sys.maxint
-capacity_links = [5, 5, 5, 10, 5, 5] # 5 links total, links not determined here1
+capacity_links = [5, 5, 5, 10, 5, 5]  # 5 links total, links not determined here1
 rem_c = capacity_links.copy()
-demands = [] #demands for each source destination pair
+demands = []  # demands for each source destination pair
 tunnels = {}
-
 # End - initializations
 
 def swan_allocation():
@@ -33,6 +34,7 @@ def swan_allocation():
 def throughput_max(priority, rem_c):
     return MCF(priority, rem_c, 0, MAX_INT, None)
 
+
 def getmaxDemand():
     max_d = 0
     for f in flows:
@@ -40,14 +42,15 @@ def getmaxDemand():
             max_d = f.demand
     return max_d
 
-def appx_maxmin(alpha, U, pri,rem_c):
+
+def appx_maxmin(alpha, U, pri, rem_c):
     F = {}
     d_max = getmaxDemand()
-    T = math.ceil(math.log(d_max/U,alpha))
-    for k in range(1,T):
-        list_b = MCF(pri, rem_c, math.pow(alpha,k-1)*U,math.pow(alpha,k)*U,F)
+    T = math.ceil(math.log(d_max / U, alpha))
+    for k in range(1, T):
+        list_b = MCF(pri, rem_c, math.pow(alpha, k - 1) * U, math.pow(alpha, k) * U, F)
         for b_i in list_b:
-            if b_i not in F and b_i < min(demands[k]):  #not sure, it must be i
+            if b_i not in F and b_i < min(demands[k]):  # not sure, it must be i
                 pass
 
 
