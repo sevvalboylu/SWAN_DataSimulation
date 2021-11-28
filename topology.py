@@ -1,28 +1,29 @@
 # coding=UTF-8
 from mininet.net import Mininet
-from mininet.node import CPULimitedHost # cpu Related settings
+from mininet.node import CPULimitedHost  # cpu Related settings
 from mininet.node import OVSController
-from mininet.link import TCLink # addLink Related settings
-net = Mininet(link=TCLink,controller = OVSController)
+from mininet.link import TCLink  # addLink Related settings
 
-c0 = net.addController() # SWAN controller
+net = Mininet(link=TCLink, controller=OVSController)
+
+c0 = net.addController()  # SWAN controller
 # Datacenter with switches and network agents etc.
 h1 = net.addHost('h1')
 h2 = net.addHost('h2')
 h3 = net.addHost('h3')
 h4 = net.addHost('h4')
 h5 = net.addHost('h5')
-s1 = net.addSwitch('s1') # service broker 1
-s2 = net.addSwitch('s2') # service broker 2
+s1 = net.addSwitch('s1')  # service broker 1
+s2 = net.addSwitch('s2')  # service broker 2
 
 # Creating links between nodes
-net.addLink(h1, s1, bw=10, delay='5ms',max_queue_size=1000, loss=10, use_htb=True) #bandwidth bw,delayed delay Etc
-net.addLink(h2, s1)
-net.addLink(h3, s1, bw=10, delay='5ms',max_queue_size=1000, loss=10, use_htb=True) #bandwidth bw,delayed delay Etc
-net.addLink(h4, s2)
-net.addLink(h5, s2)
-net.addLink(s1, c0)
-net.addLink(s2, c0)
+net.addLink(h1, s1, bw=10) # , delay='5ms', max_queue_size=1000, loss=10, use_htb=True)
+net.addLink(h2, s1, bw=10)
+net.addLink(h3, s1, bw=10)
+net.addLink(h4, s2, bw=10)
+net.addLink(h5, s2, bw=10)
+net.addLink(s1, c0, bw=10)
+net.addLink(s2, c0, bw=10)
 
 # Datacenter with inter-DC traffic omitted
 dc1 = net.addHost('dc1')
