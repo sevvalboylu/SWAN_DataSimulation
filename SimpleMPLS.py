@@ -7,21 +7,21 @@ addresses. The first switch connected to a host along a path will act as the
 ingress LSR and perform MPLS push operation, last switch will do the MPLS
 pop operation. This program requires OpenFlow 1.3 support by the switches. I've
 also found that Mininet/OVS needs to be running on a more recent Linux kernel
-for the MPLS functionality to work. Also recomment OpenVswitch 2.5 or higher.
+for the MPLS functionality to work. Also recommend OpenVswitch 2.5 or higher.
 
 This application will only work with Mininet networks whose topologies are known
 in advanced and available in a JSON file. Substitute your network file for my
-ExNetweithLoops1A.json file.
+ExNetWithLoops1A.json file.
 
 To launch the application just use:
-    python SimpleMPLS.py --netfile=ExNetwithLoops1A.json
+    python SimpleMPLS.py --netfile=ExNetWithLoops1A.json
 If you don't want to use the telnet/python backdoor:
-    python SimpleMPLS.py --netfile=ExNetwithLoops1A.json --notelnet
+    python SimpleMPLS.py --netfile=ExNetWithLoops1A.json --notelnet
 
 To launch mininet using a custom topology and remote controller based on this
 code use:
 
-sudo python NetRunnerNS.py -f ExNetwithLoops1A.json -ip address_of_this_code
+sudo python NetRunnerNS.py -f ExNetWithLoops1A.json -ip address_of_this_code
 
 To bring up our 'backdoor' python interface on the machine you are running this
 program (windows or Linux) type:
