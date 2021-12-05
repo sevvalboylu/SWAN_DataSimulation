@@ -1,0 +1,318 @@
+{
+    "directed": false,
+    "multigraph": false,
+    "graph": {
+        "name": " ExNetwithLoops1A",
+        "desc": "Example of a network with loops to try with Mininet."
+    },
+    "nodes": [
+        {
+            "ip": "10.0.0.2",
+            "mac": "00:00:00:00:00:2",
+            "y": 358,
+            "x": 456,
+            "type": "host",
+            "id": "H8"
+        },
+        {
+            "ip": "10.0.0.3",
+            "mac": "00:00:00:00:00:3",
+            "y": 211,
+            "x": 607,
+            "type": "host",
+            "id": "H9"
+        },
+        {
+            "ip": "10.0.0.4",
+            "mac": "00:00:00:00:00:4",
+            "y": 123,
+            "x": 125,
+            "type": "host",
+            "id": "H2"
+        },
+        {
+            "ip": "10.0.0.5",
+            "mac": "00:00:00:00:00:5",
+            "y": 176,
+            "x": 171,
+            "type": "host",
+            "id": "H3"
+        },
+        {
+            "y": 142,
+            "x": 209,
+            "type": "switch",
+            "id": "S1"
+        },
+        {
+            "ip": "10.0.0.6",
+            "mac": "00:00:00:00:00:6",
+            "y": 61,
+            "x": 204,
+            "type": "host",
+            "id": "H1"
+        },
+        {
+            "ip": "10.0.0.7",
+            "mac": "00:00:00:00:00:7",
+            "y": 267,
+            "x": 399,
+            "type": "host",
+            "id": "H6"
+        },
+        {
+            "ip": "10.0.0.8",
+            "mac": "00:00:00:00:00:8",
+            "y": 378,
+            "x": 373,
+            "type": "host",
+            "id": "H7"
+        },
+        {
+            "y": 157,
+            "x": 593,
+            "type": "switch",
+            "id": "S5"
+        },
+        {
+            "y": 323,
+            "x": 419,
+            "type": "switch",
+            "id": "S4"
+        },
+        {
+            "y": 107,
+            "x": 408,
+            "type": "switch",
+            "id": "S3"
+        },
+        {
+            "ip": "10.0.0.9",
+            "mac": "00:00:00:00:00:9",
+            "y": 273,
+            "x": 155,
+            "type": "host",
+            "id": "H4"
+        },
+        {
+            "y": 247,
+            "x": 230,
+            "type": "switch",
+            "id": "S2"
+        },
+        {
+            "ip": "10.0.0.10",
+            "mac": "00:00:00:00:00:10",
+            "y": 67,
+            "x": 364,
+            "type": "host",
+            "id": "H11"
+        },
+        {
+            "ip": "10.0.0.11",
+            "mac": "00:00:00:00:00:11",
+            "y": 325,
+            "x": 209,
+            "type": "host",
+            "id": "H5"
+        },
+        {
+            "ip": "10.0.0.12",
+            "mac": "00:00:00:00:00:12",
+            "y": 120,
+            "x": 632,
+            "type": "host",
+            "id": "H10"
+        },
+        {
+            "ip": "10.0.0.13",
+            "mac": "00:00:00:00:00:13",
+            "y": 68,
+            "x": 425,
+            "type": "host",
+            "id": "H12"
+        }
+    ],
+    "links": [
+        {
+            "source": "H8",
+            "capacity": 40,
+            "weight": 2,
+            "target": "S4",
+            "ports": {
+                "H8": 1,
+                "S4": 1
+            }
+        },
+        {
+            "source": "H9",
+            "capacity": 40,
+            "weight": 2,
+            "target": "S5",
+            "ports": {
+                "H9": 1,
+                "S5": 1
+            }
+        },
+        {
+            "source": "H2",
+            "capacity": 40,
+            "weight": 2,
+            "target": "S1",
+            "ports": {
+                "H2": 1,
+                "S1": 1
+            }
+        },
+        {
+            "source": "H3",
+            "capacity": 40,
+            "weight": 2,
+            "target": "S1",
+            "ports": {
+                "H3": 1,
+                "S1": 2
+            }
+        },
+        {
+            "source": "S1",
+            "capacity": 11,
+            "weight": 20,
+            "target": "S3",
+            "ports": {
+                "S1": 3,
+                "S3": 1
+            }
+        },
+        {
+            "source": "S1",
+            "capacity": 20,
+            "weight": 7,
+            "target": "S2",
+            "ports": {
+                "S1": 4,
+                "S2": 1
+            }
+        },
+        {
+            "source": "S1",
+            "capacity": 40,
+            "weight": 2,
+            "target": "H1",
+            "ports": {
+                "S1": 5,
+                "H1": 1
+            }
+        },
+        {
+            "source": "H6",
+            "capacity": 40,
+            "weight": 2,
+            "target": "S4",
+            "ports": {
+                "H6": 1,
+                "S4": 2
+            }
+        },
+        {
+            "source": "H7",
+            "capacity": 40,
+            "weight": 2,
+            "target": "S4",
+            "ports": {
+                "H7": 1,
+                "S4": 3
+            }
+        },
+        {
+            "source": "S5",
+            "capacity": 16,
+            "weight": 10,
+            "target": "S3",
+            "ports": {
+                "S5": 2,
+                "S3": 2
+            }
+        },
+        {
+            "source": "S5",
+            "capacity": 40,
+            "weight": 2,
+            "target": "H10",
+            "ports": {
+                "S5": 3,
+                "H10": 1
+            }
+        },
+        {
+            "source": "S5",
+            "capacity": 19,
+            "weight": 27,
+            "target": "S4",
+            "ports": {
+                "S5": 4,
+                "S4": 4
+            }
+        },
+        {
+            "source": "S4",
+            "capacity": 15,
+            "weight": 17,
+            "target": "S2",
+            "ports": {
+                "S4": 5,
+                "S2": 2
+            }
+        },
+        {
+            "source": "S3",
+            "capacity": 40,
+            "weight": 2,
+            "target": "H11",
+            "ports": {
+                "S3": 3,
+                "H11": 1
+            }
+        },
+        {
+            "source": "S3",
+            "capacity": 40,
+            "weight": 2,
+            "target": "H12",
+            "ports": {
+                "S3": 4,
+                "H12": 1
+            }
+        },
+        {
+            "source": "S3",
+            "capacity": 22,
+            "weight": 23,
+            "target": "S2",
+            "ports": {
+                "S3": 5,
+                "S2": 3
+            }
+        },
+        {
+            "source": "H4",
+            "capacity": 40,
+            "weight": 2,
+            "target": "S2",
+            "ports": {
+                "H4": 1,
+                "S2": 4
+            }
+        },
+        {
+            "source": "S2",
+            "capacity": 40,
+            "weight": 2,
+            "target": "H5",
+            "ports": {
+                "S2": 5,
+                "H5": 1
+            }
+        }
+    ]
+}
